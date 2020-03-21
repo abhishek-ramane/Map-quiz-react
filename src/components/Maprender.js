@@ -12,7 +12,6 @@ const Maprender = props => {
     //console.log(visitedStates);
     let colorState = [];
     colorState = visitedStates.filter(state => state.code === pathOfMap.code);
-    console.log(`color= ${colorState[0]}`);
     return colorState.length > 0 ? { fill: colorState[0].color } : null;
   }
 

@@ -9,7 +9,7 @@ const App = () => {
   let [userSelection, setUserSelection] = useState();
   let [userCorrectCount, setUserCorrectCount] = useState(0);
   let [visitedStates, setVisitedStates] = useState([]); //{code, color}
-
+  let MapData = indiaData;
   useEffect(() => {
     randomSelect();
     if (userSelection != null) checkAnswer();
@@ -55,17 +55,23 @@ const App = () => {
         }
       ]);
     }
-    console.log(
-      `${JSON.stringify(visitedStates)} correctAnswer=${JSON.stringify(
-        correctAnswer.code
-      )}, wrongAnswer= ${JSON.stringify(userSelection)}`
-    );
+    // console.log(
+    //   `${JSON.stringify(visitedStates)} correctAnswer=${JSON.stringify(
+    //     correctAnswer.code
+    //   )}, wrongAnswer= ${JSON.stringify(userSelection)}`
+    // );
   }
 
   function randomSelect() {
-    const values = Object.values(indiaData);
-    const randomState = values[parseInt(Math.random() * indiaData.length)];
-    //return randomState;
+    let filteredNonVisitedRandomState = MapData;
+    visitedStates.forEach(visitedMap => {
+      filteredNonVisitedRandomState = filteredNonVisitedRandomState.filter(
+        map => visitedMap.code !== map.code
+      );
+    });
+    const values = Object.values(filteredNonVisitedRandomState);
+    const randomState =
+      values[parseInt(Math.random() * filteredNonVisitedRandomState.length)];
     setCorrectAnswer(randomState);
   }
 

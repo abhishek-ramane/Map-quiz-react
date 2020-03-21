@@ -4,11 +4,11 @@ const PathComponent = props => {
   let data = props.data;
   let userSelectFun = props.userSelectFun;
   const colorOfState = props.colorOfState;
-  console.log(
-    `colorOfState= ${JSON.stringify(
-      colorOfState
-    )}  data= ${JSON.stringify(data.code)}`
-  );
+  // console.log(
+  //   `colorOfState= ${JSON.stringify(
+  //     colorOfState
+  //   )}  data= ${JSON.stringify(data.code)}`
+  // );
   return (
     <path
       onClick={userSelectFun}
