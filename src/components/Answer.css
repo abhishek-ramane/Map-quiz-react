@@ -1,0 +1,19 @@
+.answer-div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 0px;
+}
+
+.correct-ans {
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.wrong-ans {
+  grid-area: 1 / 3 / 2 / 4;
+}
+
+.corrected-ans {
+  grid-area: 1 / 2 / 2 / 3;
+}

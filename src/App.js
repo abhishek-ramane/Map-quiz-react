@@ -3,6 +3,7 @@ import MapRender from "./components/Maprender";
 import indiaData from "./services/india.json";
 import "./App.css";
 import QuestionTitle from "./components/QuestionTitle";
+import Answer from "./components/Answer";
 
 const App = () => {
   let [correctAnswer, setCorrectAnswer] = useState({});
@@ -76,9 +77,12 @@ const App = () => {
   }
 
   const setUserSelectionFunc = event => {
-    //console.log(event.target.id);
-    userSelection = event.target.id;
-    setUserSelection(userSelection);
+    console.log(`visitedState= ${JSON.stringify(visitedStates)}`);
+    if (visitedStates.filter(vs => vs.code !== event.target.id)) {
+      console.log(event.target.id);
+      userSelection = event.target.id;
+      setUserSelection(userSelection);
+    }
   };
 
   return (
@@ -92,6 +96,9 @@ const App = () => {
       </div>
       <div className="que-div">
         <QuestionTitle state={correctAnswer} />
+        <div>
+          <Answer data={visitedStates} />
+        </div>
       </div>
     </div>
   );

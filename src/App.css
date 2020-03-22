@@ -15,7 +15,8 @@
 .que-div {
   display: flex;
   align-items: center;
-  /* flex-direction: column; */
+  flex-direction: column;
+  margin: auto;
 }
 
 .App-header {
