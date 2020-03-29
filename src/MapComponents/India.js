@@ -5,7 +5,7 @@ function SvgComponent(props) {
   const { handleClick, visitedStates, ...rest } = props;
   let [colorVisited, setColorVisited] = useState({ fill: "red" });
   useEffect(() => {
-    console.log(colorVisited);
+    // console.log(colorVisited);
   }, [visitedStates]);
   return (
     <svg {...rest}>

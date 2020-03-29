@@ -87,8 +87,8 @@ const App = () => {
   }
 
   const setUserSelectionFunc = event => {
-    console.log(`visitedState= ${JSON.stringify(visitedStates)}`);
-    console.log(event.target.id);
+    // console.log(`visitedState= ${JSON.stringify(visitedStates)}`);
+    // console.log(event.target.id);
     if (!isVisited(event.target.id)) {
       userSelection = event.target.id;
       setUserSelection(userSelection);
