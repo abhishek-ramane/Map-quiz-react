@@ -20,7 +20,7 @@ export default props => {
   }, [data]);
 
   function getStateName(state) {
-    const stateData = indiaData.filter(data => data.code == state.code);
+    const stateData = indiaData.filter(data => data.code === state.code);
     //console.log(stateData);
     return stateData[0].name;
   }

@@ -63,6 +63,16 @@ const App = () => {
     // );
   }
 
+  function isVisited(id) {
+    let isVisited = false;
+    visitedStates.forEach(state => {
+      if (state.code === id) {
+        isVisited = true;
+      }
+    });
+    return isVisited;
+  }
+
   function randomSelect() {
     let filteredNonVisitedRandomState = MapData;
     visitedStates.forEach(visitedMap => {
@@ -78,10 +88,12 @@ const App = () => {
 
   const setUserSelectionFunc = event => {
     console.log(`visitedState= ${JSON.stringify(visitedStates)}`);
-    if (visitedStates.filter(vs => vs.code !== event.target.id)) {
-      console.log(event.target.id);
+    console.log(event.target.id);
+    if (!isVisited(event.target.id)) {
       userSelection = event.target.id;
       setUserSelection(userSelection);
+    } else {
+      console.log("Visited");
     }
   };
 
