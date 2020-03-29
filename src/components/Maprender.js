@@ -17,7 +17,6 @@ const Maprender = props => {
 
   return (
     <div className="map">
-      <div>Buttons</div>
       <div className="maprender-div">
         <svg viewBox="-10 75 700 700" {...rest}>
           <defs></defs>
