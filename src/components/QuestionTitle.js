@@ -1,5 +1,4 @@
 import React from "react";
-import indiaData from "../services/india.json";
 
 export default function QuestionTitle({ state }) {
   const queDiv = {

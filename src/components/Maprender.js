@@ -1,14 +1,14 @@
-import React from "react";
-import India from "../MapComponents/India";
+import React, { useState } from "react";
 import "./Maprender.css";
 import PathComponent from "./PathComponent";
-const url = `/map`;
+import { pan, zoom, getScale, setScale, resetScale } from 'svg-pan-zoom-container';
+
 
 const Maprender = (props) => {
   const { userSelectFun, visitedStates, mapData, ...rest } = props;
+  //const viewBox = "-10 75 700 700";
+  let [viewBox,setViewBox]=useState("-10 75 700 700");
 
-  const viewBox = "-10 75 700 700";
-  const demo = { fill: "red" };
   function setColorForStates(pathOfMap) {
     //console.log(visitedStates);
     let colorState = [];
@@ -18,7 +18,7 @@ const Maprender = (props) => {
 
   return (
     <div className="map">
-      <div className="maprender-div">
+      <div className="maprender-div" data-zoom-on-wheel data-pan-on-drag>
         <svg viewBox={viewBox} {...rest}>
           <defs></defs>
           {mapData.map((pathOfMap) => (
