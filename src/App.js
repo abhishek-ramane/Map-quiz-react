@@ -99,18 +99,18 @@ const App = () => {
 
   return (
     <div className="App">
+      <div className="que-div">
+        <QuestionTitle state={correctAnswer} />
+        <div>
+          <Answer data={visitedStates} />
+        </div>
+      </div>
       <div className="map-div">
         <MapRender
           userSelectFun={setUserSelectionFunc}
           visitedStates={visitedStates}
           mapData={indiaData}
         />
-      </div>
-      <div className="que-div">
-        <QuestionTitle state={correctAnswer} />
-        <div>
-          <Answer data={visitedStates} />
-        </div>
       </div>
     </div>
   );
