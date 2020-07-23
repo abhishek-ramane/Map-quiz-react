@@ -1,26 +1,26 @@
 import React, { useState, useEffect } from "react";
-import indiaData from "../services/india.json";
 import "./Answer.css";
 
 export default (props) => {
-  //console.log(props.data);
-  let data = props.data;
+  //console.log(props.visitedState);
+  let visitedState = props.visitedState;
+  let data= props.data;
   let [correctAnswers, setCorrectAnswer] = useState([]);
   let [wrongAnswer, setWrongAnswer] = useState([]);
   let [correctedAnswer, setCorrectedAnswer] = useState([]);
 
   function setInitialState(mapColor) {
-    return data.filter((d) => d.color === mapColor);
+    return visitedState.filter((d) => d.color === mapColor);
   }
 
   useEffect(() => {
-    setWrongAnswer(data.filter((d) => d.color === "red"));
-    setCorrectedAnswer(data.filter((d) => d.color === "yellow"));
-    setCorrectAnswer(data.filter((d) => d.color === "green"));
-  }, [data]);
+    setWrongAnswer(visitedState.filter((d) => d.color === "red"));
+    setCorrectedAnswer(visitedState.filter((d) => d.color === "yellow"));
+    setCorrectAnswer(visitedState.filter((d) => d.color === "green"));
+  }, [visitedState]);
 
   function getStateName(state) {
-    const stateData = indiaData.filter((data) => data.code === state.code);
+    const stateData = data.filter((visitedState) => visitedState.code === state.code);
     //console.log(stateData);
     return stateData[0].name;
   }

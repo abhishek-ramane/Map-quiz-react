@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import "./Maprender.css";
 import PathComponent from "./PathComponent";
-import { pan, zoom, getScale, setScale, resetScale } from 'svg-pan-zoom-container';
-
+import {
+  pan,
+  zoom,
+  getScale,
+  setScale,
+  resetScale,
+} from "svg-pan-zoom-container";
 
 const Maprender = (props) => {
-  const { userSelectFun, visitedStates, mapData, ...rest } = props;
+  const { userSelectFun, visitedStates, mapData, viewBox, ...rest } = props;
   //const viewBox = "-10 75 700 700";
-  let [viewBox,setViewBox]=useState("-10 75 700 700");
 
   function setColorForStates(pathOfMap) {
     //console.log(visitedStates);

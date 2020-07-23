@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import MapRender from "./components/Maprender";
-import indiaData from "./services/india.json";
+import initialMapData from "./services/canada.json";
 import "./App.css";
 import QuestionTitle from "./components/QuestionTitle";
 import Answer from "./components/Answer";
@@ -10,7 +10,7 @@ const App = () => {
   let [userSelection, setUserSelection] = useState();
   let [userCorrectCount, setUserCorrectCount] = useState(0);
   let [visitedStates, setVisitedStates] = useState([]); //{code, color}
-  let MapData = indiaData;
+  let MapData = initialMapData.data;
   useEffect(() => {
     randomSelect();
     if (userSelection != null) checkAnswer();
@@ -102,16 +102,19 @@ const App = () => {
       <div className="que-div">
         <QuestionTitle state={correctAnswer} />
         <div>
-          <Answer data={visitedStates} />
+          <Answer visitedState={visitedStates} data={initialMapData.data}/>
         </div>
       </div>
+    
+    {initialMapData.data?
       <div className="map-div">
         <MapRender
           userSelectFun={setUserSelectionFunc}
           visitedStates={visitedStates}
-          mapData={indiaData}
+          mapData={initialMapData.data}
+          viewBox={initialMapData.viewBox}
         />
-      </div>
+      </div>:<p>No data Available for this country</p>}
     </div>
   );
 };
