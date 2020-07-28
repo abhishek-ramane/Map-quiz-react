@@ -11,7 +11,6 @@ import {
 
 const Maprender = (props) => {
   const { userSelectFun, visitedStates, mapData, viewBox, ...rest } = props;
-  //const viewBox = "-10 75 700 700";
 
   function setColorForStates(pathOfMap) {
     //console.log(visitedStates);
