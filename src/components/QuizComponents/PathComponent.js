@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 
-const PathComponent = props => {
+
+const PathComponent = (props) => {
   let data = props.data;
   let userSelectFun = props.userSelectFun;
   const colorOfState = props.colorOfState;

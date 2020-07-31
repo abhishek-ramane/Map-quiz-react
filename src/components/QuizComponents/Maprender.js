@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./Maprender.css";
 import PathComponent from "./PathComponent";
 import {
@@ -30,7 +30,6 @@ const Maprender = (props) => {
               data={pathOfMap}
               userSelectFun={userSelectFun}
               colorOfState={setColorForStates(pathOfMap)}
-              //colorMap={() => {pathOfMaps.code}}
             />
           ))}
           ;
