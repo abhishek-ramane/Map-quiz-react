@@ -17,8 +17,32 @@
   stroke: #fff;
   stroke-opacity: 1;
   stroke-width: 0.5;
+  transition: fill 0.6s ease-out;
 }
 
 path:hover {
-  fill: rgb(23, 183, 231);
+  /* fill: rgb(23, 183, 231); */
+   fill:#00acee; 
+  /* animation: shake 3.2s 1 ease; */
+  
 }
+
+/* @keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+} */
+
+
