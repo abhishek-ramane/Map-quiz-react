@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import MapRender from "./Maprender";
 
-import initialMapData from "../../services/canada.json";
+import initialMapData from "../../services/india.json";
 import QuestionTitle from "./QuestionTitle";
 import Answer from "./Answer";
 
